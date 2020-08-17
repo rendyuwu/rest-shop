@@ -1,0 +1,24 @@
+{
+  "name": "rest-shop",
+  "version": "1.0.0",
+  "description": "Build a Simple Shop RESTful API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rendyuwu/rest-shop.git"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
+  "author": "Rendy Wijaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rendyuwu/rest-shop/issues"
+  },
+  "homepage": "https://github.com/rendyuwu/rest-shop#readme"
+}
