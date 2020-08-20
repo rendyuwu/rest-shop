@@ -15,6 +15,7 @@ mongoose.connect(
   `mongodb+srv://node-shop:${process.env.MONGO_ATLAS_PW}@node-rest-shop.gkcna.mongodb.net/${process.env.MONGO_ATLAS_DB}?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
+mongoose.Promise = global.Promise;
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));

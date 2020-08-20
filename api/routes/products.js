@@ -38,7 +38,7 @@ router.post("/", (req, res, next) => {
 	const product = new Product({
 		_id: new mongoose.Types.ObjectId(),
 		name: req.body.name,
-		price: req.body.price,
+		price: req.body.price
 	});
 	product
 		.save()
@@ -60,7 +60,7 @@ router.post("/", (req, res, next) => {
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json({
-				error: err,
+				error: err
 			});
 		});
 });
@@ -89,7 +89,7 @@ router.get("/:productId", (req, res, next) => {
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json({
-				error: err,
+				error: err
 			});
 		});
 });
@@ -119,8 +119,7 @@ router.patch("/:productId", (req, res, next) => {
 });
 
 router.delete("/:productId", (req, res, next) => {
-	const id = req.params.productId;
-	Product.deleteOne({ _id: id })
+	Product.deleteOne({ _id: req.params.productId })
 		.exec()
 		.then((result) => {
 			res.status(200).json({
