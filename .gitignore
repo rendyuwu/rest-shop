@@ -138,4 +138,7 @@ dist
 # Ignore all local history of files
 .history
 
+# Upload dir
+uploads/*
+
 # End of https://www.toptal.com/developers/gitignore/api/linux,visualstudiocode,node
