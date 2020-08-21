@@ -8,14 +8,16 @@ const dotenv = require('dotenv');
 // import einvorement
 dotenv.config();
 
-const productRouter = require("./api/routes/products");
-const orderRouter = require("./api/routes/orders");
+const productRouters = require("./api/routes/products");
+const orderRouters = require("./api/routes/orders");
+const userRouters = require("./api/routes/user");
 
 mongoose.connect(
   `mongodb+srv://node-shop:${process.env.MONGO_ATLAS_PW}@node-rest-shop.gkcna.mongodb.net/${process.env.MONGO_ATLAS_DB}?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 mongoose.Promise = global.Promise;
+mongoose.set('useCreateIndex', true);
 
 app.use(morgan("dev"));
 app.use('/uploads', express.static('uploads/'))
@@ -37,8 +39,9 @@ app.use((req, res, next) => {
 });
 
 // Routes wich should handle request
-app.use("/products", productRouter);
-app.use("/orders", orderRouter);
+app.use("/products", productRouters);
+app.use("/orders", orderRouters);
+app.use("/user", userRouters);
 
 app.use((req, res, next) => {
   const error = new Error("Not found!");
