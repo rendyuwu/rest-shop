@@ -5,6 +5,9 @@ const dotenv = require('dotenv');
 const multer = require('multer');
 const fs = require('fs');
 
+// import einvorement
+dotenv.config();
+
 var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		cb(null, './uploads/')
@@ -28,8 +31,6 @@ var upload = multer({
 	}
 })
 
-// import einvorement
-dotenv.config();
 
 const Product = require("../models/product");
 
